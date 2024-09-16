@@ -10,7 +10,6 @@ int main(){
      while(t--){
           int n;
           cin>>n;
-          // int x = 2;
           int ans;
           int maxs = INT_MIN;
           for(int i = 2; i <= n; i++){
@@ -24,7 +23,6 @@ int main(){
                     maxs = sm;
                     ans = i;
                }
-               // maxs = max(maxs, sm);
           }
           cout<<ans<<endl;
      }    
