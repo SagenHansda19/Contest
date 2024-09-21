@@ -10,7 +10,6 @@ int main(){
      while(t--){
           int n, k;
           cin>>n>>k;
-          // vector<int> a(n);
           int val;
           int give = 0;
           int ans = 0;
