@@ -23,7 +23,7 @@ int main(){
                     give--;
                }
           }
-          
+          //only push
           cout<<ans<<endl;
      }    
 }
