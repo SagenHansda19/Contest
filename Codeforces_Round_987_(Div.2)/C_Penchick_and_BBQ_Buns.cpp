@@ -4,7 +4,6 @@ using namespace std;
 void solve()
 {
     int n; cin>>n;
- 
     if (n%2 == 0)
     {
         for (int i = 1; i<=n/2; i++) cout<<i<<' '<<i<<' ';
@@ -21,7 +20,6 @@ void solve()
     ans[25] = 1;
     ans[26] = 2;
     ans[22] = 2;
- 
     int cur = 3;
     int pos = 1;
     while (pos<n)
@@ -34,7 +32,6 @@ void solve()
             pos+=2;
         }
     }
- 
     for(int a : ans) {
         cout << a << " ";
     }
