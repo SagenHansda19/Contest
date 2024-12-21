@@ -4,41 +4,17 @@ using namespace std;
 void solve() {
 	int n, k;
 	cin >> n >> k;
-	if(k == 1) {
-		for(int i = 0; i < n; i++) {
-			cout << k << " ";
-			k++;
-		}
-		cout << '\n';
-		return;
+	vector<int> a(n, -1);
+	int c = 0;	
+	for(int i = k - 1; i < n; i += k) {
+		a[i] = ++c;
 	}
-	int as = (n + k - 1) / k;
-	vector<int> a(as * k);
-	// cout << as << "\n";
-	int fix = as / 2;
-	int ct = 1, tt = 0;
-	for(int i = 0; i < as; i++) {
-		int cix = fix;
-		if(i % 2 == 0) {
-			cix = fix + tt;
-			tt++;
+	for(int i = 0; i < n; i++) {
+		if(a[i] == -1) {
+			a[i] = ++c;
 		}
-		else cix = fix - tt;
-		for(int j = 0; j < k; j++) {
-			if(ct > n) break;
-			a[cix] = ct;
-			cix += k;
-			ct++;
-		}
-	} 
-	vector<int> ans;
-	for(int i = 0; i < a.size(); i++) {
-		if(a[i] != 0) ans.push_back(a[i]);
+		cout << a[i] << " \n"[i == n - 1]; 
 	}
-	for(int i : ans) {
-		cout << i << " ";
-	}
-	cout << '\n';
 }
 
 int main(){
