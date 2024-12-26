@@ -4,12 +4,12 @@ using ll = long long;
 
 void solve() {
 	ll n; cin >> n;
-	if(n <= 3) {
-		cout << 1 << '\n';
-		return;
-	}
-	int h = floor(log(n) / log(4));
-	cout << (int)pow(2, h) << '\n';
+	ll c = 1; 
+	while(n >= 4) {
+		c *= 2;
+		n /= 4;
+	}	
+	cout << c << '\n';
 }
 
 int main(){
