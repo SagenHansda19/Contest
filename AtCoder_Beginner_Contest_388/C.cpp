@@ -6,6 +6,12 @@ void solve() {
     vector<long long> a(n);
     for(long long &i : a) cin >> i;
     long long ans = 0;
+    //binary search
+    for(int i = 0; i < n; i++) {
+        int ub = upper_bound(a.begin(), a.end(), a[j] / 2) - a.begin();
+        ans += ub;
+    }
+    //linear
     sort(a.begin(), a.end());
 	int j = 0;
     for(int i = 0; i < n; i++) {

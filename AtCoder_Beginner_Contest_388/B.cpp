@@ -4,16 +4,14 @@ using namespace std;
 void solve() {
     int n, d;
     cin >> n >> d;
-    vector<int> th(n), len(n);
-    for(int i = 0; i < n; i++) {
-        cin >> th[i] >> len[i];
-    }
-    for(int i = 1; i <= d; i++) {
-        int mw = INT_MIN;
-        for(int j = 0; j < n; j++) {
-            mw = max(mw, th[j] * (len[j] + i));
+    vector<pair<int, int>> a(n);
+    for(auto &i : a) cin >> i.first >> i.second;
+    for(int i = 0; i < d; i++) {
+        int an = 0;
+        for(auto &x : a) {
+            an += x.second + i;
         }
-        cout << mw << '\n';
+        cout << an << '\n';
     }
 }
 
